@@ -7,7 +7,7 @@ class RlApp extends React.Component {
     const: 70 ,
     itemGain: 0,
     itemWantedGet: 0,
-    itemWanted: 20,
+    itemWanted: 0,
     ratio: 0
   };
   setLvl(e) {
@@ -25,7 +25,7 @@ class RlApp extends React.Component {
   }
 
   GainLvl = () => {
-  var calRatio = Number(this.state.itemWantedGet / this.state.itemGain).toFixed(4);
+  var calRatio = Number(this.state.itemWantedGet / (this.state.itemGain + 1)).toFixed(4);
     this.setState({
       lvl: Number(this.state.lvl + 1),
       itemGain: Number(this.state.lvl - this.state.const + 1),
@@ -33,7 +33,7 @@ class RlApp extends React.Component {
     });
   }
   GainLvlAndWantedItem = () => {
-    var calRatio = Number(this.state.itemWantedGet / this.state.itemGain).toFixed(4);
+    var calRatio = Number((this.state.itemWantedGet + 1) / (this.state.itemGain + 1)).toFixed(4);
     this.setState({
       lvl: Number(this.state.lvl + 1),
       itemWantedGet: Number(this.state.itemWantedGet + 1),

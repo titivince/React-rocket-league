@@ -12,8 +12,11 @@ h1 {
   color: rgb(65, 65, 65);
 }
 .main {
-  width: 35%;
-  margin: auto;
+  max-width: 250px;
+  position: relative;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -25vh);
 }
 label {
   display: flex;
@@ -22,7 +25,11 @@ label {
 }
 input {
   margin-top: 1em;
-  width: 5em;
+  padding: 3px;
+  width: 2em;
+}
+:focus {
+  outline: none;
 }
 button {
   margin: 1em 1em 0 0;

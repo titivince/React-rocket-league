@@ -11,7 +11,7 @@ class RlApp extends React.Component {
     ratio: 0
   };
   setLvl(e) {
-    var calRatio = Number(this.state.itemWantedGet / this.state.itemGain).toFixed(4);
+    var calRatio = Number(this.state.itemWantedGet / this.state.itemGain).toFixed(2);
     this.setState({
       lvl: Number(e.target.value),
       itemGain: Number(e.target.value - this.state.const),
@@ -25,7 +25,7 @@ class RlApp extends React.Component {
   }
 
   GainLvl = () => {
-  var calRatio = Number(this.state.itemWantedGet / (this.state.itemGain + 1)).toFixed(4);
+  var calRatio = Number(this.state.itemWantedGet / (this.state.itemGain + 1)).toFixed(2);
     this.setState({
       lvl: Number(this.state.lvl + 1),
       itemGain: Number(this.state.lvl - this.state.const + 1),
@@ -33,7 +33,7 @@ class RlApp extends React.Component {
     });
   }
   GainLvlAndWantedItem = () => {
-    var calRatio = Number((this.state.itemWantedGet + 1) / (this.state.itemGain + 1)).toFixed(4);
+    var calRatio = Number((this.state.itemWantedGet + 1) / (this.state.itemGain + 1)).toFixed(2);
     this.setState({
       lvl: Number(this.state.lvl + 1),
       itemWantedGet: Number(this.state.itemWantedGet + 1),
@@ -48,11 +48,11 @@ class RlApp extends React.Component {
         <h1>Rocket League</h1>
         <div class="main">
           <label>
-            Current lvl
+            Current lvl :
             <input type="text" value={this.state.lvl} onChange={this.setLvl.bind(this)}/>
           </label>
           <label>
-            Total item wanted
+            Total item wanted :
             <input type="text" value={this.state.itemWanted} onChange={this.setItemWanted.bind(this)} />
           </label>
 
